@@ -46,8 +46,15 @@ test("the Android experience is packaged locally and requests no Internet permis
     new URL("../android-studio/app/src/main/assets/index.html", import.meta.url),
     "utf8",
   );
+  const strings = await readFile(
+    new URL("../android-studio/app/src/main/res/values/strings.xml", import.meta.url),
+    "utf8",
+  );
 
   assert.doesNotMatch(manifest, /android\.permission\.INTERNET/);
+  assert.match(manifest, /android:icon="@mipmap\/ic_launcher"/);
+  assert.match(manifest, /android:roundIcon="@mipmap\/ic_launcher_round"/);
+  assert.match(strings, /Juancito Zalazar - Consulta Electoral/);
   assert.match(activity, /file:\/\/\/android_asset\/index\.html/);
   assert.match(activity, /assets\.list\("padron"\)/);
   assert.match(html, /src="app\.js"/);
