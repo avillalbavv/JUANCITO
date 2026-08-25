@@ -48,6 +48,19 @@ El build prepara automáticamente `dist/_worker.js` para Cloudflare Pages en mod
 
 La app Android consulta los fragmentos de `app/src/main/assets/padron/` localmente, sin enviar la cédula ni el nombre a Internet.
 
+La aplicación no solicita permiso de Internet. La pantalla inicial, las fotografías, la búsqueda por cédula o nombre y los 24.152 registros están incluidos dentro del APK. El botón de Google Maps abre una aplicación externa y solamente necesita conexión para cargar un mapa que no esté guardado en el teléfono.
+
+## Descargar el APK desde GitHub
+
+Cada cambio de la carpeta `android-studio/` genera automáticamente un APK instalable:
+
+1. Abrir la pestaña **Actions** del repositorio.
+2. Entrar en la ejecución **Generar APK Android** más reciente.
+3. Descargar el artefacto **JUANCITO-offline-apk**.
+4. Descomprimirlo e instalar `JUANCITO-offline.apk` en el teléfono.
+
+También se puede iniciar manualmente desde **Actions → Generar APK Android → Run workflow**.
+
 ## Recursos oficiales incluidos
 
 La web y la aplicación Android ya incluyen las fotografías transparentes de Juancito Zalazar y Enmanuel Gini, el icono circular y los logos de Lista 1 / Opción 3. Si alguna fotografía faltara, el diseño mantiene un monograma `JZ` o `EG` para no mostrar imágenes rotas.
