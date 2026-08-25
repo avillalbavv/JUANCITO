@@ -28,6 +28,16 @@ npm run build
 npm start
 ```
 
+## Publicar en Cloudflare Pages
+
+En **Settings → Build → Build configuration** usar exactamente:
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Root directory: dejar vacío
+
+El build prepara automáticamente `dist/_worker.js` para Cloudflare Pages en modo avanzado. Esto permite servir tanto la interfaz como `/api/consulta`; no hay que cambiar el directorio de salida a `dist/client`.
+
 ## Abrir en Android Studio
 
 1. Abrir Android Studio.
