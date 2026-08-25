@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#a51d2d">
+  <title>Consulta Electoral Piribebuy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="flag"></div>
+  <main id="welcome" class="welcome">
+    <p class="kicker">Piribebuy · Lista 1 · Opción 3</p>
+    <div class="portrait featured" data-name="JZ"><img src="candidatos/juancito-zalazar.png" alt="Juancito Zalazar" onerror="this.remove()"></div>
+    <span class="pill">Candidato a concejal</span>
+    <h1>Juancito<br><strong>Zalazar</strong></h1>
+    <p class="intro">Encontrá tu local de votación, mesa y número de orden de forma rápida, segura y sin conexión.</p>
+    <button class="primary" id="enter">Entrar a consultas electorales <b>→</b></button>
+    <div class="running"><div class="portrait" data-name="EG"><img src="candidatos/enmanuel-gini.png" alt="Enmanuel Gini" onerror="this.remove()"></div><p><small>Con</small><strong>Enmanuel Gini</strong><span>Candidato a intendente · Lista 1</span></p></div>
+  </main>
+
+  <section id="lookup" class="hidden">
+    <header>
+      <button id="back" aria-label="Volver">←</button>
+      <div><small>Consulta electoral</small><strong>Piribebuy</strong></div>
+      <div class="pair"><div class="portrait" data-name="EG"><img src="candidatos/enmanuel-gini.png" alt="Enmanuel Gini" onerror="this.remove()"></div><div class="portrait" data-name="JZ"><img src="candidatos/juancito-zalazar.png" alt="Juancito Zalazar" onerror="this.remove()"></div></div>
+    </header>
+    <div class="ticket"><span><b>Enmanuel Gini</b> · Intendente</span><i></i><span><b>Juancito Zalazar</b> · Concejal <em>Opción 3</em></span></div>
+    <main class="content">
+      <section id="search-card" class="card search-card">
+        <p class="kicker">Padrón electoral de Piribebuy</p>
+        <h2>¿Dónde votás?</h2>
+        <p>Consultá tu local, mesa y orden en segundos.</p>
+        <div class="tabs"><button class="active" data-mode="document">Por cédula</button><button data-mode="name">Por nombre</button></div>
+        <form id="form">
+          <label id="document-label">Número de cédula<div class="input"><span>CI</span><input id="document" inputmode="numeric" placeholder="1.234.567" autocomplete="off"></div></label>
+          <label id="name-label" class="hidden">Nombre y apellido<div class="input"><span>⌕</span><input id="name" placeholder="Ej. María Giménez" autocomplete="off"></div></label>
+          <p id="message" class="message hidden"></p>
+          <button class="primary" type="submit">Consultar padrón</button>
+        </form>
+        <div id="matches" class="matches hidden"></div>
+      </section>
+      <section id="result" class="card result hidden"></section>
+      <aside class="reminder"><b>!</b><p><strong>Recordatorio</strong><span>Llevá tu cédula y verificá tu mesa antes de salir.</span></p></aside>
+      <footer>Consulta local · Base electoral de Piribebuy</footer>
+    </main>
+  </section>
+  <script src="app.js"></script>
+</body>
+</html>
