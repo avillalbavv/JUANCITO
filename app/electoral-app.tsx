@@ -175,7 +175,7 @@ export function ElectoralApp() {
           </div>
         </div>
         <div className="ticket-row">
-          <span><b>Enmanuel Gini</b> · Intendente</span><i aria-hidden />
+          <span><b>Enmanuel Gini</b> · Intendente <em>Lista 1</em></span><i aria-hidden />
           <span><b>Juancito Zalazar</b> · Concejal <em>Opción 3</em></span>
         </div>
       </header>

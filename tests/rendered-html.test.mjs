@@ -40,6 +40,7 @@ test("renders the electoral landing page and official portraits", async () => {
   assert.match(html, /href="\/favicon-32\.png"/i);
   assert.match(html, /href="\/apple-touch-icon\.png"/i);
   assert.match(html, /Entrar a consultas electorales/i);
+  assert.match(html, /Intendente[\s\S]*Lista 1/i);
   assert.match(html, /\/candidatos\/juancito-zalazar\.png/i);
   assert.match(html, /\/candidatos\/enmanuel-gini\.png/i);
 });

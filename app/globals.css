@@ -15,8 +15,9 @@ button:focus-visible,input:focus-visible,a:focus-visible { outline:3px solid rgb
 .welcome-kicker,.eyebrow { color:var(--red); font-size:11px; line-height:1.2; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
 .candidate-photo { position:relative; display:grid; place-items:center; width:54px; height:54px; flex:0 0 auto; overflow:hidden; border:3px solid #fff; border-radius:50%; background:linear-gradient(145deg,var(--red-soft),#e8d9db); box-shadow:0 8px 24px rgba(104,26,39,.16); color:var(--red-dark); font-size:14px; font-weight:900; letter-spacing:.04em; }
 .candidate-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; }
-.candidate-photo--featured { width:172px; height:172px; margin:26px 0 15px; border-width:6px; box-shadow:0 26px 60px rgba(105,25,38,.2); font-size:42px; }
-.candidate-photo--featured::after { content:"3"; position:absolute; right:5px; bottom:7px; z-index:2; display:grid; place-items:center; width:38px; height:38px; border:4px solid #fff; border-radius:50%; background:var(--red); color:#fff; font-size:18px; font-weight:900; }
+.candidate-photo--featured { width:172px; height:172px; margin:26px 0 15px; overflow:visible; border-width:6px; box-shadow:0 26px 60px rgba(105,25,38,.2); font-size:42px; }
+.candidate-photo--featured img { border-radius:50%; }
+.candidate-photo--featured::after { content:"3"; position:absolute; right:-8px; bottom:8px; z-index:2; display:grid; place-items:center; width:46px; height:46px; border:4px solid #fff; border-radius:13px; background:linear-gradient(145deg,#bd2639,var(--red-dark)); box-shadow:0 10px 24px rgba(121,19,33,.32); color:#fff; font-size:23px; line-height:1; font-weight:950; }
 .role-pill { margin:0 0 8px; padding:7px 13px; border-radius:999px; background:var(--red-soft); color:var(--red-dark); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
 .welcome-card h1 { margin:0; color:var(--ink); font-family:Georgia,"Times New Roman",serif; font-size:clamp(45px,13vw,68px); line-height:.87; font-weight:400; letter-spacing:-.05em; }
 .welcome-card h1 strong { color:var(--red); font-weight:800; }
