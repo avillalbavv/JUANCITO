@@ -301,11 +301,12 @@
 .simulator-site-header a:hover{text-decoration:underline}
 .simulator-site-header strong{font-size:15px;letter-spacing:.03em}
 .simulator-site-header span{font-weight:500}
+.simulator-site-header .simulator-permanent-notice{max-width:50%;padding:5px 9px;border:1px solid #f4d4a2;color:#ffe4b2;font-size:11px;font-weight:700;text-align:center}
 .portrait img,.review-portrait img{object-fit:contain}
 .tone-green{background:#1d5333}
 .ballot-card--featured{background:#a87b16;color:#fff}
 .ballot-card--council.ballot-card--featured{background:#ad851e;color:#fff}
-.review-panel--featured{background:#ad851e;color:#fff}
+.review-panel--featured{background:var(--red);color:#fff}
 .utility-glyph{display:grid;place-items:center;width:2.34375cqw;height:2.34375cqw;background:#535859;color:#fff;font-size:2cqw;line-height:1}
 .review-glyph{display:block;font-size:5.208333cqw;line-height:1}
 .completion-check{font-size:4.6875cqw;font-weight:800}
@@ -313,9 +314,48 @@
   .simulator-shell{display:block;min-height:100dvh;overflow:visible;background:var(--surface)}
   .simulator-site-header{min-height:64px;padding:12px;color:#fff;background:#292929;font-size:12px}
   .simulator-site-header strong{font-size:12px;text-align:right}
+  .simulator-site-header .simulator-permanent-notice{order:3;max-width:none;width:100%;font-size:10px}
+  .simulator-site-header{flex-wrap:wrap}
   .machine-frame,.stage-review,.stage-complete{min-height:calc(100dvh - 64px)}
   .utility-glyph{width:32px;height:32px;font-size:25px}
   .review-glyph{font-size:45px}
   .completion-check{font-size:58px}
 }
 @media(max-width:390px){.simulator-site-header strong span{display:block}}
+
+/* Las instrucciones reproducen la secuencia gráfica incluida en el simulador aportado. */
+.stage-identity,.stage-insert,.stage-verification,.stage-folding,.stage-inking,.stage-complete{display:block;background:#f2f2f2}
+.instruction-screen{display:grid;grid-template-rows:auto minmax(0,1fr) auto;width:100%;height:100%;min-height:0;padding:1.5cqw 3cqw 1.1cqw;background:#f2f2f2;color:#222}
+.instruction-logo{width:16cqw;max-height:5cqw;object-fit:contain;object-position:left center}
+.instruction-content{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1cqw;min-height:0;text-align:center}
+.instruction-image{display:block;width:auto;max-width:65%;height:auto;max-height:28cqw;object-fit:contain}
+.instruction-content p{max-width:70%;margin:0;font-size:1.35cqw;line-height:1.15}
+.instruction-navigation{display:flex;justify-content:center;align-items:center;gap:1.5cqw}
+.instruction-navigation button{min-width:15cqw;min-height:3.7cqw;border:0;border-radius:.5cqw;background:#3678af;color:#fff;cursor:pointer;font-size:1.35cqw}
+.instruction-navigation button:first-child:not(:last-child){background:#666}
+.instruction-navigation button:focus-visible{outline:3px solid #222;outline-offset:3px}
+.closing-content{display:flex;align-items:center;justify-content:center;gap:2.5cqw;min-height:0;margin:auto;text-align:left}
+.closing-content>img{width:19cqw;max-height:29cqw;object-fit:contain;object-position:bottom}
+.closing-content>div{display:grid;gap:.8cqw;max-width:39cqw}
+.closing-content h1{margin:0;color:#a60000;font-size:3cqw;line-height:1}
+.closing-content p{margin:0;font-size:1.75cqw;line-height:1.2}
+.closing-content strong{font-size:1.5cqw}
+.closing-content small{font-size:1cqw;font-weight:700}
+@media(max-width:900px){
+  .stage-identity,.stage-insert,.stage-verification,.stage-folding,.stage-inking,.stage-complete{padding-bottom:0;min-height:calc(100dvh - 64px)}
+  .instruction-screen{height:auto;min-height:calc(100dvh - 64px);padding:24px 16px 16px}
+  .instruction-logo{width:166px;max-height:68px;margin-left:clamp(0px,5vw,24px)}
+  .instruction-content{gap:20px;padding:30px 0}
+  .instruction-image{max-width:min(100%,480px);max-height:38dvh}
+  .instruction-content p{max-width:530px;font-size:clamp(18px,5vw,23px);line-height:1.08}
+  .instruction-navigation{gap:12px}
+  .instruction-navigation button{min-width:135px;min-height:62px;border-radius:9px;font-size:20px}
+  .closing-content{display:grid;justify-items:center;gap:10px;text-align:center}
+  .closing-content>img{width:min(55vw,220px);max-height:28dvh}
+  .closing-content>div{gap:12px;max-width:520px}
+  .closing-content h1{font-size:clamp(27px,8vw,38px)}
+  .closing-content p{font-size:clamp(18px,5vw,23px)}
+  .closing-content strong{font-size:18px}
+  .closing-content small{font-size:15px}
+}
+@media(max-height:640px){.instruction-image{max-height:27dvh}.instruction-content{gap:8px;padding:10px 0}.closing-content>img{max-height:22dvh}}

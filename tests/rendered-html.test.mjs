@@ -47,7 +47,7 @@ test("renders the electoral landing page and official portraits", async () => {
   assert.match(html, /\/candidatos\/enmanuel-gini\.png/i);
 });
 
-test("opens the local voting demonstration at the first ballot step", async () => {
+test("opens the local voting demonstration at its first instruction step", async () => {
   const worker = await loadPagesWorker();
   const response = await worker.fetch(
     new Request("http://localhost/simulador", { headers: { accept: "text/html" } }),
@@ -56,10 +56,9 @@ test("opens the local voting demonstration at the first ballot step", async () =
   );
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Candidatos a INTENDENTE MUNICIPAL/i);
+  assert.match(html, /Presentá tu cédula de identidad civil/i);
   assert.match(html, /SIMULADOR DEMOSTRATIVO/i);
-  assert.match(html, /simulador\/candidatos\/283\.1872\.webp/i);
-  assert.match(html, /simulador\/candidatos\/284\.1873\.webp/i);
+  assert.match(html, /simulador\/instrucciones\/boleta-troquel\.png/i);
   assert.doesNotMatch(html, /Seleccionar departamento/i);
 });
 
