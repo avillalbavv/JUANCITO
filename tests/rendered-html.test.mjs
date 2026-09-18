@@ -39,10 +39,28 @@ test("renders the electoral landing page and official portraits", async () => {
   assert.match(html, /<title>Consulta Electoral Piribebuy \| Juancito Zalazar<\/title>/i);
   assert.match(html, /href="\/favicon-32\.png"/i);
   assert.match(html, /href="\/apple-touch-icon\.png"/i);
-  assert.match(html, /Entrar a consultas electorales/i);
+  assert.match(html, /Utilizar el padrón/i);
+  assert.match(html, /href="\/simulador"/i);
+  assert.match(html, /Utilizar el simulador de voto/i);
   assert.match(html, /Intendente[\s\S]*Lista 1/i);
   assert.match(html, /\/candidatos\/juancito-zalazar\.png/i);
   assert.match(html, /\/candidatos\/enmanuel-gini\.png/i);
+});
+
+test("opens the local voting demonstration at the first ballot step", async () => {
+  const worker = await loadPagesWorker();
+  const response = await worker.fetch(
+    new Request("http://localhost/simulador", { headers: { accept: "text/html" } }),
+    env,
+    ctx,
+  );
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Candidatos a INTENDENTE MUNICIPAL/i);
+  assert.match(html, /SIMULADOR DEMOSTRATIVO/i);
+  assert.match(html, /simulador\/candidatos\/283\.1872\.webp/i);
+  assert.match(html, /simulador\/candidatos\/284\.1873\.webp/i);
+  assert.doesNotMatch(html, /Seleccionar departamento/i);
 });
 
 test("serves electoral lookups through the Pages Worker", async () => {

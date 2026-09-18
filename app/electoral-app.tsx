@@ -144,10 +144,14 @@ export function ElectoralApp() {
           <CandidatePhoto name="Juancito Zalazar" initials="JZ" src="/candidatos/juancito-zalazar.png" featured />
           <p className="role-pill">Candidato a concejal</p>
           <h1>Juancito<br /><strong>Zalazar</strong></h1>
-          <p className="welcome-copy">Encontrá tu local de votación, mesa y número de orden de forma rápida y segura.</p>
-          <button className="primary-button primary-button--large" onClick={() => setScreen("lookup")}>
-            Entrar a consultas electorales <span aria-hidden>→</span>
-          </button>
+          <p className="welcome-copy">Elegí qué querés hacer: consultar el padrón o practicar el recorrido de la pantalla de votación.</p>
+          <div className="welcome-actions">
+            <button className="primary-button primary-button--large" onClick={() => setScreen("lookup")}>
+              Utilizar el padrón <span aria-hidden>→</span>
+            </button>
+            <a className="simulator-entry" href="/simulador">Utilizar el simulador de voto <span aria-hidden>→</span></a>
+          </div>
+          <p className="simulation-disclaimer">El simulador es una demostración. No registra votos ni representa al sistema oficial.</p>
           <div className="running-with">
             <CandidatePhoto name="Enmanuel Gini" initials="EG" src="/candidatos/enmanuel-gini.png" />
             <div>

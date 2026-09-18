@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Consulta Electoral Piribebuy | Juancito Zalazar",
-  description: "Consultá tu local de votación, mesa y orden en el padrón electoral de Piribebuy.",
+  description: "Consultá el padrón electoral de Piribebuy o practicá el recorrido en un simulador demostrativo de votación, sin registrar votos reales.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

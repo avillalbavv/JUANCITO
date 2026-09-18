@@ -28,6 +28,12 @@ button:focus-visible,input:focus-visible,a:focus-visible { outline:3px solid rgb
 .primary-button:disabled { cursor:wait; opacity:.65; transform:none; }
 .primary-button--large { max-width:410px; display:flex; align-items:center; justify-content:center; gap:14px; font-size:16px; }
 .primary-button--large span { font-size:22px; }
+.welcome-actions { display:grid; gap:10px; width:min(100%,410px); }
+.welcome-actions .primary-button--large { max-width:none; }
+.simulator-entry { display:flex; align-items:center; justify-content:center; gap:14px; min-height:56px; border:2px solid var(--red); border-radius:17px; background:#fff; color:var(--red-dark); font-size:16px; font-weight:850; text-decoration:none; }
+.simulator-entry:hover { background:var(--red-soft); }
+.simulator-entry span { font-size:22px; }
+.simulation-disclaimer { max-width:410px; margin:10px 0 0; color:var(--muted); font-size:12px; line-height:1.35; }
 .running-with { width:min(100%,410px); display:flex; align-items:center; gap:13px; margin-top:26px; padding:13px 15px; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.7); text-align:left; }
 .running-with div { display:flex; min-width:0; flex-direction:column; }
 .running-with span { color:var(--muted); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
